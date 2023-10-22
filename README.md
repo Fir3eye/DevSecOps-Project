@@ -17,21 +17,19 @@
 # **Youtube Video for step by step Demonstration!**
 [![Video Tutorial](https://img.youtube.com/vi/g8X5AoqCJHc/0.jpg)](https://youtu.be/g8X5AoqCJHc)
 
-
-## Susbcribe:
-[https://www.youtube.com/@cloudchamp?
 ](https://www.youtube.com/@cloudchamp?sub_confirmation=1)
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
+==================================================================
 
-### **Phase 1: Initial Setup and Deployment**
+# Phase 1: Initial Setup and Deployment**
 
-**Step 1: Launch EC2 (Ubuntu 22.04):**
+## Step 1: Launch EC2 (Ubuntu 22.04):**
 
 - Provision an EC2 instance on AWS with Ubuntu 22.04.
 - Connect to the instance using SSH.
 
-**Step 2: Clone the Code:**
+## Step 2: Clone the Code:**
 
 - Update all the packages and then clone the code.
 - Clone your application's code repository onto the EC2 instance:
@@ -41,7 +39,7 @@
     ```
     
 
-**Step 3: Install Docker and Run the App Using a Container:**
+## Step 3: Install Docker and Run the App Using a Container:**
 
 - Set up Docker on the EC2 instance:
     
@@ -67,7 +65,7 @@
 
 It will show an error cause you need API key
 
-**Step 4: Get the API Key:**
+## Step 4: Get the API Key:**
 
 - Open a web browser and navigate to TMDB (The Movie Database) website.
 - Click on "Login" and create an account.
@@ -82,7 +80,7 @@ Now recreate the Docker image with your api key:
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
 
-**Phase 2: Security**
+# Phase 2: Security**
 
 1. **Install SonarQube and Trivy:**
     - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
@@ -116,7 +114,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
     - Integrate SonarQube with your CI/CD pipeline.
     - Configure SonarQube to analyze code for quality and security issues.
 
-**Phase 3: CI/CD Setup**
+# Phase 3: CI/CD Setup**
 
 1. **Install Jenkins for Automation:**
     - Install Jenkins on the EC2 instance to automate deployment:
@@ -362,7 +360,7 @@ sudo systemctl restart jenkins
 
 ```
 
-**Phase 4: Monitoring**
+# Phase 4: Monitoring**
 
 1. **Install Prometheus and Grafana:**
 
@@ -561,11 +559,11 @@ sudo systemctl restart jenkins
    `http://<your-prometheus-ip>:9090/targets`
 
 
-####Grafana
+# Grafana
 
 **Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
 
-**Step 1: Install Dependencies:**
+## Step 1: Install Dependencies:**
 
 First, ensure that all necessary dependencies are installed:
 
@@ -574,7 +572,7 @@ sudo apt-get update
 sudo apt-get install -y apt-transport-https software-properties-common
 ```
 
-**Step 2: Add the GPG Key:**
+## Step 2: Add the GPG Key:**
 
 Add the GPG key for Grafana:
 
@@ -582,7 +580,7 @@ Add the GPG key for Grafana:
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 ```
 
-**Step 3: Add Grafana Repository:**
+## Step 3: Add Grafana Repository:**
 
 Add the repository for Grafana stable releases:
 
@@ -590,7 +588,7 @@ Add the repository for Grafana stable releases:
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 ```
 
-**Step 4: Update and Install Grafana:**
+## Step 4: Update and Install Grafana:**
 
 Update the package list and install Grafana:
 
@@ -599,7 +597,7 @@ sudo apt-get update
 sudo apt-get -y install grafana
 ```
 
-**Step 5: Enable and Start Grafana Service:**
+## Step 5: Enable and Start Grafana Service:**
 
 To automatically start Grafana after a reboot, enable the service:
 
@@ -613,7 +611,7 @@ Then, start Grafana:
 sudo systemctl start grafana-server
 ```
 
-**Step 6: Check Grafana Status:**
+## Step 6: Check Grafana Status:**
 
 Verify the status of the Grafana service to ensure it's running correctly:
 
@@ -621,7 +619,7 @@ Verify the status of the Grafana service to ensure it's running correctly:
 sudo systemctl status grafana-server
 ```
 
-**Step 7: Access Grafana Web Interface:**
+## Step 7: Access Grafana Web Interface:**
 
 Open a web browser and navigate to Grafana using your server's IP address. The default port for Grafana is 3000. For example:
 
@@ -629,7 +627,7 @@ Open a web browser and navigate to Grafana using your server's IP address. The d
 
 You'll be prompted to log in to Grafana. The default username is "admin," and the default password is also "admin."
 
-**Step 8: Change the Default Password:**
+## Step 8: Change the Default Password:**
 
 When you log in for the first time, Grafana will prompt you to change the default password for security reasons. Follow the prompts to set a new password.
 
@@ -649,7 +647,7 @@ To visualize metrics, you need to add a data source. Follow these steps:
   - Set the "URL" to `http://localhost:9090` (assuming Prometheus is running on the same server).
   - Click the "Save & Test" button to ensure the data source is working.
 
-**Step 10: Import a Dashboard:**
+## Step 10: Import a Dashboard:**
 
 To make it easier to view metrics, you can import a pre-configured dashboard. Follow these steps:
 
@@ -677,7 +675,7 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
     - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
 
 
-**Phase 5: Notification**
+# Phase 5: Notification**
 
 1. **Implement Notification Services:**
     - Set up email notifications in Jenkins or other notification mechanisms.
@@ -732,7 +730,7 @@ Don't forget to reload or restart Prometheus to apply these changes to your conf
 
 To deploy an application with ArgoCD, you can follow these steps, which I'll outline in Markdown format:
 
-### Deploy Application with ArgoCD
+# Deploy Application with ArgoCD
 
 1. **Install ArgoCD:**
 
@@ -752,7 +750,7 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 4. **Access your Application**
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
 
-**Phase 7: Cleanup**
+# Phase 7: Cleanup**
 
 1. **Cleanup AWS EC2 Instances:**
     - Terminate AWS EC2 instances that are no longer needed.
